@@ -5,7 +5,9 @@
  * Giảng viên hướng dẫn: Nguyễn Thị Thu Trang
  * Bản quyền thuộc về Nhóm 10
  */
-package readers.boundary;
+package librarians.boundary;
+
+import readers.boundary.*;
 
 /**
  *
@@ -144,6 +146,7 @@ public class ViewProfile extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

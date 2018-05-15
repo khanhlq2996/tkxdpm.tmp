@@ -264,7 +264,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="13" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Th&#xea;m s&#xe1;ch"/>
+        <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t s&#xe1;ch"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_update_bookActionPerformed"/>

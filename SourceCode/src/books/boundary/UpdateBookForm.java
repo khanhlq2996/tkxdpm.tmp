@@ -113,7 +113,7 @@ public class UpdateBookForm extends javax.swing.JFrame {
         la_book_cost.setText("Giá");
 
         bt_update_book.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        bt_update_book.setText("Thêm sách");
+        bt_update_book.setText("Cập nhật sách");
         bt_update_book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_update_bookActionPerformed(evt);
