@@ -3,6 +3,11 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="mb_mainmenu">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="0"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
@@ -76,7 +81,7 @@
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="lb_copies_number" pref="178" max="32767" attributes="0"/>
+                      <Component id="lb_copies_number" pref="181" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tf_copies_number" min="-2" pref="234" max="-2" attributes="0"/>
                   </Group>
@@ -175,11 +180,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="la_book_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n S&#xe1;ch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_book_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n s&#xe1;ch"/>
       </Properties>
       <Events>
@@ -188,11 +199,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_author_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n T&#xe1;c gi&#x1ea3;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_author_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n T&#xe1;c gi&#x1ea3;"/>
       </Properties>
       <Events>
@@ -201,6 +218,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_book_category">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="Th&#x1ec3; lo&#x1ea1;i s&#xe1;ch"/>
@@ -216,11 +236,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_book_category">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Th&#x1ec3; lo&#x1ea1;i s&#xe1;ch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_publishing_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n NXB"/>
       </Properties>
       <Events>
@@ -229,6 +255,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_publishing_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n NXB"/>
       </Properties>
     </Component>
@@ -236,6 +265,9 @@
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="33" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
       </Properties>
@@ -252,6 +284,9 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="tb_result_search">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="13" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="4">
                 <Column editable="true" title="STT" type="java.lang.Object"/>
@@ -288,7 +323,7 @@
     <Component class="javax.swing.JLabel" name="lb_them_ban_sao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Grande" size="18" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TH&#xca;M B&#x1ea2;N SAO"/>
@@ -297,11 +332,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_book_id">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="M&#xc3; S&#x1ed0; S&#xc1;CH"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_book_id">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ed1; S&#xe1;ch"/>
       </Properties>
       <Events>
@@ -310,11 +351,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_copies_number">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="S&#x1ed0; L&#x1af;&#x1ee2;NG B&#x1ea2;N SAO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_copies_number">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="S&#x1ed1; L&#x1b0;&#x1ee3;ng B&#x1ea3;n Sao"/>
       </Properties>
       <Events>
@@ -323,28 +370,44 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_librarian_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="TH&#x1ee6; TH&#x1af; TH&#xca;M B&#x1ea2;N SAO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_librarian_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="Th&#x1ee7; th&#x1b0; th&#xea;m s&#xe1;ch"/>
           </StringArray>
         </Property>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_librarian_nameActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lb_copies_created">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="NG&#xc0;Y TH&#xca;M B&#x1ea2;N SAO "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_copies_created">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ng&#xe0;y th&#xea;m b&#x1ea3;n sao"/>
       </Properties>
       <Events>
@@ -353,6 +416,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="bt_add_copies">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Th&#xea;m B&#x1ea3;n Sao S&#xe1;ch"/>
       </Properties>
     </Component>

@@ -55,8 +55,10 @@ public class CreateBookForm extends javax.swing.JFrame {
         lb_create_book.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_create_book.setText("THÊM SÁCH");
 
+        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
+        tf_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_name.setText("Tên sách");
         tf_book_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,8 +66,10 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
+        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name.setText("Tên NXB");
         tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,10 +77,13 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
+        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
+        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_author_name.setText("Tên Tác giả");
         tf_author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +91,7 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_book_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +99,7 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        tf_book_created.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_created.setText("Ngày thêm");
         tf_book_created.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,12 +107,16 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        lb_book_created.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_created.setText("Ngày thêm");
 
+        lb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_librarian_name.setText("Thủ thư thêm sách");
 
+        la_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_cost.setText("Giá");
 
+        tf_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_cost.setText("Giá");
         tf_book_cost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +124,7 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        cb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_librarian_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_librarian_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +132,7 @@ public class CreateBookForm extends javax.swing.JFrame {
             }
         });
 
+        bt_add_book.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bt_add_book.setText("Thêm sách");
         bt_add_book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,35 +154,36 @@ public class CreateBookForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(la_book_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lb_publishing_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lb_author_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lb_book_category, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(cb_book_category, 0, 1, Short.MAX_VALUE)
-                    .addComponent(tf_publishing_name, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_author_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                    .addComponent(tf_book_name, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(la_book_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_book_created, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_librarian_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                            .addComponent(la_book_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_publishing_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_author_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_book_category, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tf_book_name)
+                            .addComponent(tf_author_name, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                            .addComponent(tf_publishing_name)
+                            .addComponent(cb_book_category, 0, 1, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_book_created, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cb_librarian_name, 0, 183, Short.MAX_VALUE)
-                            .addComponent(tf_book_cost)))
-                    .addComponent(bt_add_book, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(25, 25, 25))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lb_create_book, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(la_book_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lb_book_created, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lb_librarian_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_book_created, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cb_librarian_name, 0, 183, Short.MAX_VALUE)
+                                    .addComponent(tf_book_cost)))
+                            .addComponent(bt_add_book, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(25, 25, 25))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lb_create_book, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

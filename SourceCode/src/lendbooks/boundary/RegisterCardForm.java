@@ -54,6 +54,7 @@ public class RegisterCardForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tf_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_name.setText("Tên sách");
         tf_book_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,10 +62,13 @@ public class RegisterCardForm extends javax.swing.JFrame {
             }
         });
 
+        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
+        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
+        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name.setText("Tên NXB");
         tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,10 +76,13 @@ public class RegisterCardForm extends javax.swing.JFrame {
             }
         });
 
+        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
+        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
+        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_book_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +90,7 @@ public class RegisterCardForm extends javax.swing.JFrame {
             }
         });
 
+        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_author_name.setText("Tên Tác giả");
         tf_author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +99,7 @@ public class RegisterCardForm extends javax.swing.JFrame {
         });
 
         bt_search.setBackground(new java.awt.Color(0, 51, 255));
+        bt_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bt_search.setText("Tìm kiếm");
         bt_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +107,7 @@ public class RegisterCardForm extends javax.swing.JFrame {
             }
         });
 
+        tb_result_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tb_result_search.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -114,8 +124,10 @@ public class RegisterCardForm extends javax.swing.JFrame {
 
         jLabel1.setText("Danh sách sách tìm kiếm");
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel2.setText("Danh sách đăng ký mượn");
 
+        tb_list_register.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tb_list_register.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -147,7 +159,7 @@ public class RegisterCardForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ĐĂNG KÝ MƯỢN SÁCH");
 

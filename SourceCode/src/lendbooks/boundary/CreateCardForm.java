@@ -62,12 +62,14 @@ public class CreateCardForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THÊM THẺ MƯỢN SÁCH");
 
+        tf_book_name2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_name2.setText("Tên sách");
         tf_book_name2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,8 +77,10 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
+        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_author_name.setText("Tên Tác giả");
         tf_author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +88,7 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_book_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,8 +96,10 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
+        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name.setText("Tên NXB");
         tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +107,10 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
+        tb_result_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tb_result_search.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -117,6 +126,7 @@ public class CreateCardForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb_result_search);
 
         bt_search.setBackground(new java.awt.Color(0, 51, 255));
+        bt_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bt_search.setText("Tìm kiếm");
         bt_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,10 +134,13 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel2.setText("Danh sách sách tìm kiếm");
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel3.setText("Mã Độc giả");
 
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextField1.setText("Mã Độc giả");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,12 +148,16 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel4.setText("Thủ Thư");
 
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thủ thư 1", "Thủ thư 2", "Thủ thư 3" }));
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel5.setText("Danh sách Đăng ký mượn");
 
+        tb_list_register.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tb_list_register.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -155,8 +172,10 @@ public class CreateCardForm extends javax.swing.JFrame {
         tb_list_register.setColumnSelectionAllowed(true);
         jScrollPane2.setViewportView(tb_list_register);
 
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel6.setText("Ngày mượn");
 
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextField2.setText("Ngày mượn");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,8 +183,10 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel7.setText("Hạn trả sách");
 
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextField3.setText("Hạn trả");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,8 +194,10 @@ public class CreateCardForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel8.setText("Tiền đặt cọc");
 
+        jTextField4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextField4.setText("Tiền cọc");
 
         jButton1.setText("Tạo Thẻ mượn");
@@ -243,7 +266,7 @@ public class CreateCardForm extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

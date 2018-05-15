@@ -41,43 +41,46 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="la_book_name" max="32767" attributes="0"/>
-                  <Component id="lb_publishing_name" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lb_author_name" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lb_book_category" alignment="0" pref="97" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="cb_book_category" pref="0" max="32767" attributes="0"/>
-                  <Component id="tf_publishing_name" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tf_author_name" alignment="0" pref="134" max="32767" attributes="0"/>
-                  <Component id="tf_book_name" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="la_book_cost" max="32767" attributes="0"/>
-                          <Component id="lb_book_created" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lb_librarian_name" alignment="0" max="32767" attributes="0"/>
+                          <Component id="la_book_name" max="32767" attributes="0"/>
+                          <Component id="lb_publishing_name" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lb_author_name" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lb_book_category" alignment="0" pref="97" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="tf_book_name" max="32767" attributes="0"/>
+                          <Component id="tf_author_name" alignment="1" pref="128" max="32767" attributes="0"/>
+                          <Component id="tf_publishing_name" alignment="1" max="32767" attributes="0"/>
+                          <Component id="cb_book_category" alignment="1" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tf_book_created" alignment="1" max="32767" attributes="0"/>
-                          <Component id="cb_librarian_name" pref="183" max="32767" attributes="0"/>
-                          <Component id="tf_book_cost" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="la_book_cost" max="32767" attributes="0"/>
+                                  <Component id="lb_book_created" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lb_librarian_name" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tf_book_created" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="cb_librarian_name" pref="183" max="32767" attributes="0"/>
+                                  <Component id="tf_book_cost" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="bt_add_book" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="bt_add_book" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lb_create_book" min="-2" pref="606" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Component id="lb_create_book" min="-2" pref="606" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,11 +145,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="la_book_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n S&#xe1;ch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_book_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n s&#xe1;ch"/>
       </Properties>
       <Events>
@@ -155,11 +164,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_publishing_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n NXB"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_publishing_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n NXB"/>
       </Properties>
       <Events>
@@ -168,16 +183,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_book_category">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Th&#x1ec3; lo&#x1ea1;i s&#xe1;ch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lb_author_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n T&#xe1;c gi&#x1ea3;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_author_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T&#xea;n T&#xe1;c gi&#x1ea3;"/>
       </Properties>
       <Events>
@@ -186,6 +210,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_book_category">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="Th&#x1ec3; lo&#x1ea1;i s&#xe1;ch"/>
@@ -201,6 +228,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="tf_book_created">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ng&#xe0;y th&#xea;m"/>
       </Properties>
       <Events>
@@ -209,21 +239,33 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lb_book_created">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ng&#xe0;y th&#xea;m"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lb_librarian_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Th&#x1ee7; th&#x1b0; th&#xea;m s&#xe1;ch"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="la_book_cost">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Gi&#xe1;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_book_cost">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Gi&#xe1;"/>
       </Properties>
       <Events>
@@ -232,6 +274,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_librarian_name">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
             <StringItem index="0" value="Th&#x1ec3; lo&#x1ea1;i s&#xe1;ch"/>
@@ -247,6 +292,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="bt_add_book">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="13" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Th&#xea;m s&#xe1;ch"/>
       </Properties>
       <Events>

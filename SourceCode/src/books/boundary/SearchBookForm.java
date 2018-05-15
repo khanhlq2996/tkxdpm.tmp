@@ -45,8 +45,10 @@ public class SearchBookForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
+        tf_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_name.setText("Tên sách");
         tf_book_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +56,10 @@ public class SearchBookForm extends javax.swing.JFrame {
             }
         });
 
+        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
+        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name.setText("Tên NXB");
         tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +67,7 @@ public class SearchBookForm extends javax.swing.JFrame {
             }
         });
 
+        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_author_name.setText("Tên Tác giả");
         tf_author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,10 +75,13 @@ public class SearchBookForm extends javax.swing.JFrame {
             }
         });
 
+        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
+        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
+        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_book_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +90,7 @@ public class SearchBookForm extends javax.swing.JFrame {
         });
 
         bt_search.setBackground(new java.awt.Color(0, 51, 255));
+        bt_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bt_search.setText("Tìm kiếm");
         bt_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +98,7 @@ public class SearchBookForm extends javax.swing.JFrame {
             }
         });
 
+        tb_result_search.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tb_result_search.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -104,9 +114,11 @@ public class SearchBookForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb_result_search);
         tb_result_search.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TÌM KIẾM SÁCH");
+
+        mb_mainmenu.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jMenu1.setText("Tìm kiếm sách");
         mb_mainmenu.add(jMenu1);
@@ -147,7 +159,7 @@ public class SearchBookForm extends javax.swing.JFrame {
                         .addComponent(bt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +187,7 @@ public class SearchBookForm extends javax.swing.JFrame {
                     .addComponent(bt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 30, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
