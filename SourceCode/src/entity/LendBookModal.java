@@ -10,8 +10,8 @@ import static entity.DataAccessHelper.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.*;
 import java.util.*;
+import java.sql.Date;
 
 
 /**
@@ -23,83 +23,128 @@ import java.util.*;
 public class LendBookModal extends DataAccessHelper{
     // Khai báo cấu trúc truy vấn SQL
     private final String GET_DETAIL_LENDBOOK = "SELECT * FROM lendbook WHERE id_card=?";
-    private final String GET_LIST_LENDBOOK_BY_READER = "SELECT * FROM ... WHERE ...=?";
-    private final String GET_LIST_LENDBOOK_BY_LIBRARIAN = "SELECT * FROM ... WHERE ...=?";
-    private final String GET_LIST_LENDBOOK_BY_BORROWEDDAY = "SELECT * FROM ... WHERE ...=?";
-    private final String GET_LIST_LENDBOOK_BY_PAYDAY = "SELECT * FROM ... WHERE ...=?";
+    private final String GET_LIST_LENDBOOK_BY_ATTRIBUTE = "SELECT * FROM lendbook WHERE ? like ?";
+    private final String ADD_LENDBOOK = "INSERT INTO lendbook (id_book,id_reader,id_librarian,borrowd_day,pay_appointment_day,deposit,created,status) VALUES (?,?,?,?,?,?,?,?)";;
+    private final String UPDATE_LENDBOOK = "INSERT INTO lendbook (id_book,id_reader,id_librarian,borrowd_day,pay_appointment_day,pay_day,deposit,mulct,created,updated,status) VALUES (?,?,?,?,?,?,?,?,?,?,?)";;
     
     
     
     // Khai báo các biến cần sử dụng 
-    private String idLendBook;
-    private String book;
-    private String reader;
-    private String librarian;
-    private DateTimeException borrowedDay;
-    private DateTimeException payDay;
-    private boolean status;
-    
-    public String getIdLendBook() {
-        return idLendBook;
+    private String idCard;
+    private String idBook;
+    private String idReader;
+    private String idLibrarian;
+    private Date borrowedDay;
+    private Date payAppointmentDay;
+    private Date payDay;
+    private float deposit;
+    private float mulct;
+    private Date created;
+    private Date updated;
+    private int status;    
+
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setIdLendBook(String idLendBook) {
-        this.idLendBook = idLendBook;
-    }
-    
-    public String getBook() {
-        return book;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
-    public void setBook(String book) {
-        this.book = book;
+    public String getIdBook() {
+        return idBook;
     }
 
-    public String getReader() {
-        return reader;
+    public void setIdBook(String idBook) {
+        this.idBook = idBook;
     }
 
-    public void setReader(String reader) {
-        this.reader = reader;
+    public String getIdReader() {
+        return idReader;
     }
 
-    public String getLibrarian() {
-        return librarian;
+    public void setIdReader(String idReader) {
+        this.idReader = idReader;
     }
 
-    public void setLibrarian(String librarian) {
-        this.librarian = librarian;
+    public String getIdLibrarian() {
+        return idLibrarian;
     }
 
-    public DateTimeException getBorrowedDay() {
+    public void setIdLibrarian(String idLibrarian) {
+        this.idLibrarian = idLibrarian;
+    }
+
+    public Date getBorrowedDay() {
         return borrowedDay;
     }
 
-    public void setBorrowedDay(DateTimeException borrowedDay) {
+    public void setBorrowedDay(Date borrowedDay) {
         this.borrowedDay = borrowedDay;
     }
 
-    public DateTimeException getReturnDay() {
+    public Date getPayAppointmentDay() {
+        return payAppointmentDay;
+    }
+
+    public void setPayAppointmentDay(Date payAppointmentDay) {
+        this.payAppointmentDay = payAppointmentDay;
+    }
+
+    public Date getPayDay() {
         return payDay;
     }
 
-    public void setReturnDay(DateTimeException returnDay) {
-        this.payDay = returnDay;
+    public void setPayDay(Date payDay) {
+        this.payDay = payDay;
     }
 
-    public boolean isStatus() {
+    public float getDeposit() {
+        return deposit;
+    }
+
+    public void setDeposit(float deposit) {
+        this.deposit = deposit;
+    }
+
+    public float getMulct() {
+        return mulct;
+    }
+
+    public void setMulct(float mulct) {
+        this.mulct = mulct;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
+    
     
     /**
      * Phương thức này sẽ lấy thông tin của MỘT bản ghi Thẻ mượn theo ID
      * Phương thức này được sử dụng cho chức năng xem chi tiết trong giao diện Danh sách Thẻ mượn    * @param lastName tên
      * @param id_card id thẻ mượn
-     * @return Array user;
+     * @return boolean;
      * @throws ClassNotFoundException
      * @throws SQLException
      * @see ClassNotFoundException
@@ -108,18 +153,33 @@ public class LendBookModal extends DataAccessHelper{
      * Create: 08/05/2018
      * Update: 08/05/2018
      */
-    public void getDetailLendBook(String id_card)  throws SQLException, ClassNotFoundException{
+    public boolean getDetailLendBook(String id_card)  throws SQLException, ClassNotFoundException{
         connectDB();
         PreparedStatement ps = conn.prepareStatement(GET_DETAIL_LENDBOOK);        
         ps.setString(1, id_card);
         ps.executeQuery();
         ResultSet rs = ps.executeQuery();
+        if (rs != null && rs.next()) {            
+            closeDB();  
+            return false;
+        } else {
+            closeDB();
+            return true;
+        }
     }
     
-    
+   
     /**
      * Phương thức này sẽ Thêm một thẻ mượn sách mới
      * Phương thức này được sử dụng cho chức năng xem chi tiết trong giao diện Danh sách Thẻ mượn
+     * @param idBook mã sách cẫn mượn
+     * @param idReader mã đọc giả muốn mượn
+     * @param idLibrarian mã thủ thủ cho mượn
+     * @param payAppointmentDay ngày mượn
+     * @param payAppointmentDay hạn phải trả
+     * @param deposit tiền đặt cọc
+     * @param created ngày khởi tạo phiếu
+     * @return boolean 
      * @throws ClassNotFoundException
      * @throws SQLException
      * @see ClassNotFoundException
@@ -127,10 +187,103 @@ public class LendBookModal extends DataAccessHelper{
      * @author khanh
      * Create: 08/05/2018
      * Update: 08/05/2018
-     */
-    public void addLendBook(String idCard, String idReader, String Librarian, DateTimeException borrowedDay, DateTimeException payDay, String idBook, float deposit)  throws SQLException, ClassNotFoundException{
-    
-        
+     */  
+    public boolean addLendBook()  throws SQLException, ClassNotFoundException{
+        connectDB();
+        PreparedStatement ps;
+        ps = conn.prepareStatement(ADD_LENDBOOK);
+        ps.setString(1, this.idBook);
+        ps.setString(2, this.idReader);
+        ps.setString(3, this.idLibrarian);
+        ps.setString(4, this.idLibrarian);
+        ps.setDate(5, this.payAppointmentDay);
+        ps.setFloat(6, this.deposit);
+        ps.setDate(7, this.updated);
+        ps.setInt(8, 1);
+        closeDB();
+        return true;
     }
     
+        
+    /**
+     * Phương thức này sẽ Thêm một thẻ mượn sách mới
+     * Phương thức này được sử dụng cho chức năng xem chi tiết trong giao diện Danh sách Thẻ mượn
+     * @param id_book mã sách cẫn mượn
+     * @param id_reader mã đọc giả muốn mượn
+     * @param id_librarian mã thủ thủ cho mượn
+     * @param borrowd_day ngày mượn
+     * @param pay_appointment_day hạn phải trả
+     * @param pay_day ngày trả
+     * @param deposit tiền đặt cọc
+     * @param mulct tiền phạt
+     * @param created ngày khởi tạo phiếu
+     * @param updated ngày khởi tạo phiếu
+     * @param status ngày khởi tạo phiếu
+     * @return boolean 
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @see ClassNotFoundException
+     * @see SQLException
+     * @author khanh
+     * Create: 08/05/2018
+     * Update: 08/05/2018
+     */    
+    public boolean updateLendBook(String id_book, String id_reader, String id_librarian, Date borrowd_day, Date pay_appointment_day, Date pay_day, float deposit, float mulct, Date created, Date updated, int status)  throws SQLException, ClassNotFoundException{
+        connectDB();
+        PreparedStatement ps;
+        ps = conn.prepareStatement(ADD_LENDBOOK);
+        ps.setString(1, id_book);
+        ps.setString(2, id_reader);
+        ps.setString(3, id_librarian);
+        ps.setDate(4, borrowd_day);
+        ps.setDate(5, pay_appointment_day);
+        ps.setDate(6, pay_day);
+        ps.setFloat(7, deposit);
+        ps.setFloat(8, mulct);
+        ps.setDate(9, created);
+        ps.setDate(10, updated);
+        ps.setInt(11, status);
+        closeDB();
+        return true;
+    }
+    
+    /**
+     * Tìm kiếm phiếu mượn theo thuộc tính
+     * @param key_value từ khóa
+     * @param type_search tìm kiếm theo
+     * @return cards danh sách thẻ mượn
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @see ClassNotFoundException
+     * @see SQLException
+     * @author khanh
+     * Create: 08/05/2018
+     * Update: 09/05/2018
+    */ 
+    public ArrayList<LendBookModal> searchLendBook(String key_value,String type_search) throws SQLException, ClassNotFoundException{
+        ArrayList<LendBookModal> cards = new ArrayList<>();
+        ResultSet rs;
+        connectDB();
+        PreparedStatement ps = conn.prepareStatement(GET_LIST_LENDBOOK_BY_ATTRIBUTE);
+        ps.setString(2, type_search);       
+        ps.setString(1, key_value); 
+        rs = ps.executeQuery();
+        while(rs.next()){
+            LendBookModal card = new LendBookModal();
+            card.setIdBook(rs.getString("idBook"));
+            card.setIdReader(rs.getString("idReader"));
+            card.setIdLibrarian(rs.getString("idLibrarian"));
+            card.setBorrowedDay(rs.getDate("borrowedDay"));
+            card.setPayAppointmentDay(rs.getDate("payAppointmentDay"));
+            card.setPayDay(rs.getDate("payDay"));
+            card.setDeposit(rs.getFloat("deposit"));
+            card.setMulct(rs.getFloat("mulct"));
+            card.setCreated(rs.getDate("created"));
+            card.setUpdated(rs.getDate("update"));
+            card.setStatus(rs.getInt("staus"));
+            cards.add(card);
+        }
+        closeDB();
+        return cards;
+    }
 }

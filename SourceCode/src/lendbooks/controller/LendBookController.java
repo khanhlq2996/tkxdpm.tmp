@@ -9,6 +9,8 @@ package lendbooks.controller;
 
 // Import Modal to Controller
 import entity.LendBookModal;
+import java.sql.Date;
+import java.sql.SQLException;
 
 
 /**
@@ -16,5 +18,16 @@ import entity.LendBookModal;
  * @author khanh
  */
 public class LendBookController {
+    LendBookModal lendBook = new LendBookModal();
+    
+    private static LendBookController this_lendBook;
+    
+    private LendBookController(){
+        
+    }
+    
+    public boolean addLendBook(LendBookModal lendBook)  throws ClassNotFoundException, SQLException{
+        return lendBook.addLendBook();
+    }
     
 }

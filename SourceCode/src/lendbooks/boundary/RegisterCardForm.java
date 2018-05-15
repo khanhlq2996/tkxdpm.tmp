@@ -1,22 +1,20 @@
 /*
- * Phần mềm quản lý thư viện
- * Nhóm 10 - Thiết kế và Xây dựng Phần mềm
- * Thành viên: Đinh Thị Thu Huyền, Nguyễn Thị Ngọc Huyền, Lê Quốc Khánh
- * Giảng viên hướng dẫn: Nguyễn Thị Thu Trang
- * Bản quyền thuộc về Nhóm 10
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package books.boundary;
+package lendbooks.boundary;
 
 /**
  *
  * @author khanh
  */
-public class ViewListBookForm extends javax.swing.JFrame {
+public class RegisterCardForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewListBookForm
+     * Creates new form RegisterCardForm
      */
-    public ViewListBookForm() {
+    public RegisterCardForm() {
         initComponents();
     }
 
@@ -62,20 +60,20 @@ public class ViewListBookForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewListBookForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewListBookForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewListBookForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewListBookForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewListBookForm().setVisible(true);
+                new RegisterCardForm().setVisible(true);
             }
         });
     }

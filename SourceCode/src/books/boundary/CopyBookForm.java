@@ -29,21 +29,273 @@ public class CopyBookForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        la_book_name = new javax.swing.JLabel();
+        tf_book_name = new javax.swing.JTextField();
+        lb_author_name = new javax.swing.JLabel();
+        tf_author_name = new javax.swing.JTextField();
+        cb_book_category = new javax.swing.JComboBox<>();
+        lb_book_category = new javax.swing.JLabel();
+        tf_publishing_name = new javax.swing.JTextField();
+        lb_publishing_name = new javax.swing.JLabel();
+        bt_search = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_result_search = new javax.swing.JTable();
+        lb_them_ban_sao = new javax.swing.JLabel();
+        lb_book_id = new javax.swing.JLabel();
+        tf_book_id = new javax.swing.JTextField();
+        lb_copies_number = new javax.swing.JLabel();
+        tf_copies_number = new javax.swing.JTextField();
+        lb_librarian_name = new javax.swing.JLabel();
+        cb_librarian_name = new javax.swing.JComboBox<>();
+        lb_copies_created = new javax.swing.JLabel();
+        tf_copies_created = new javax.swing.JTextField();
+        bt_add_copies = new javax.swing.JButton();
+        mb_mainmenu = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        la_book_name.setText("Tên Sách");
+
+        tf_book_name.setText("Tên sách");
+        tf_book_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_book_nameActionPerformed(evt);
+            }
+        });
+
+        lb_author_name.setText("Tên Tác giả");
+
+        tf_author_name.setText("Tên Tác giả");
+        tf_author_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_author_nameActionPerformed(evt);
+            }
+        });
+
+        cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
+        cb_book_category.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_book_categoryActionPerformed(evt);
+            }
+        });
+
+        lb_book_category.setText("Thể loại sách");
+
+        tf_publishing_name.setText("Tên NXB");
+        tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_publishing_nameActionPerformed(evt);
+            }
+        });
+
+        lb_publishing_name.setText("Tên NXB");
+
+        bt_search.setBackground(new java.awt.Color(0, 51, 255));
+        bt_search.setText("Tìm kiếm");
+        bt_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_searchActionPerformed(evt);
+            }
+        });
+
+        tb_result_search.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "STT", "Mã Sách", "Tên Sách"
+            }
+        ));
+        jScrollPane1.setViewportView(tb_result_search);
+
+        lb_them_ban_sao.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lb_them_ban_sao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_them_ban_sao.setText("THÊM BẢN SAO");
+        lb_them_ban_sao.setToolTipText("");
+
+        lb_book_id.setText("MÃ SỐ SÁCH");
+
+        tf_book_id.setText("Mã Số Sách");
+        tf_book_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_book_idActionPerformed(evt);
+            }
+        });
+
+        lb_copies_number.setText("SỐ LƯỢNG BẢN SAO");
+
+        tf_copies_number.setText("Số Lượng Bản Sao");
+        tf_copies_number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_copies_numberActionPerformed(evt);
+            }
+        });
+
+        lb_librarian_name.setText("THỦ THƯ THÊM BẢN SAO");
+
+        cb_librarian_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thủ thư thêm sách" }));
+
+        lb_copies_created.setText("NGÀY THÊM BẢN SAO ");
+
+        tf_copies_created.setText("Ngày thêm bản sao");
+        tf_copies_created.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_copies_createdActionPerformed(evt);
+            }
+        });
+
+        bt_add_copies.setText("Thêm Bản Sao Sách");
+
+        jMenu1.setText("Tìm kiếm sách");
+        mb_mainmenu.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        mb_mainmenu.add(jMenu2);
+
+        setJMenuBar(mb_mainmenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(bt_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lb_publishing_name)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_publishing_name, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(la_book_name)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_book_name, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(lb_book_category)
+                                .addGap(18, 18, 18)
+                                .addComponent(cb_book_category, 0, 1, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lb_author_name)
+                                .addGap(31, 31, 31)
+                                .addComponent(tf_author_name, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lb_copies_number, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_copies_number, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lb_book_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_book_id, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_librarian_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lb_copies_created)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_librarian_name, 0, 234, Short.MAX_VALUE)
+                            .addComponent(tf_copies_created)))
+                    .addComponent(bt_add_copies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lb_them_ban_sao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lb_author_name)
+                            .addComponent(tf_author_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_book_category)
+                                    .addComponent(cb_book_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lb_them_ban_sao)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_book_id)
+                                    .addComponent(tf_book_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_copies_number)
+                                    .addComponent(tf_copies_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_librarian_name)
+                                    .addComponent(cb_librarian_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_copies_created)
+                                    .addComponent(tf_copies_created, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25)
+                                .addComponent(bt_add_copies, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(la_book_name)
+                            .addComponent(tf_book_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lb_publishing_name)
+                            .addComponent(tf_publishing_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_search)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tf_book_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_book_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_book_nameActionPerformed
+
+    private void tf_author_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_author_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_author_nameActionPerformed
+
+    private void cb_book_categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_book_categoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_book_categoryActionPerformed
+
+    private void tf_publishing_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_publishing_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_publishing_nameActionPerformed
+
+    private void bt_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_searchActionPerformed
+
+    private void tf_book_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_book_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_book_idActionPerformed
+
+    private void tf_copies_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_copies_numberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_copies_numberActionPerformed
+
+    private void tf_copies_createdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_copies_createdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_copies_createdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +333,29 @@ public class CopyBookForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_add_copies;
+    private javax.swing.JButton bt_search;
+    private javax.swing.JComboBox<String> cb_book_category;
+    private javax.swing.JComboBox<String> cb_librarian_name;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel la_book_name;
+    private javax.swing.JLabel lb_author_name;
+    private javax.swing.JLabel lb_book_category;
+    private javax.swing.JLabel lb_book_id;
+    private javax.swing.JLabel lb_copies_created;
+    private javax.swing.JLabel lb_copies_number;
+    private javax.swing.JLabel lb_librarian_name;
+    private javax.swing.JLabel lb_publishing_name;
+    private javax.swing.JLabel lb_them_ban_sao;
+    private javax.swing.JMenuBar mb_mainmenu;
+    private javax.swing.JTable tb_result_search;
+    private javax.swing.JTextField tf_author_name;
+    private javax.swing.JTextField tf_book_id;
+    private javax.swing.JTextField tf_book_name;
+    private javax.swing.JTextField tf_copies_created;
+    private javax.swing.JTextField tf_copies_number;
+    private javax.swing.JTextField tf_publishing_name;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,8 +18,8 @@ import java.sql.*;
 public class DataAccessHelper {
 
     private final String GET_COUNT = "select count(*) from ";
-    private static String dbPath = "jdbc:mysql://localhost/test?" +
-                                   "user=minty&password=greatsqldb";
+    private static String dbPath = "jdbc:mysql://156.67.222.40:3306/u514628801_qltv?" +
+                                   "user=u514628801_qltv&password=123456a@";
     public static Connection conn = null;
     
     /**
