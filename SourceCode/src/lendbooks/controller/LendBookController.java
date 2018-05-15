@@ -8,7 +8,7 @@
 package lendbooks.controller;
 
 // Import Modal to Controller
-import entity.LendBookModal;
+import lendbooks.modal.LendBookModal;
 import java.sql.Date;
 import java.sql.SQLException;
 

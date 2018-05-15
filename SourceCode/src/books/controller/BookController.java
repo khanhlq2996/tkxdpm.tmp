@@ -8,7 +8,7 @@
 package books.controller;
 
 // Import Modal to Controller
-import entity.BookModal;
+import books.modal.BookModal;
 
 /**
  *

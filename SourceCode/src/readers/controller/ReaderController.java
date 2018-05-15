@@ -8,7 +8,7 @@
 package readers.controller;
 
 // Import Modal to Controller
-import entity.ReaderModal;
+import readers.modal.ReaderModal;
 
 /**
  *

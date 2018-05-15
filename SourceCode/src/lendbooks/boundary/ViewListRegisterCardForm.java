@@ -1,9 +1,7 @@
 /*
- * Phần mềm quản lý thư viện
- * Nhóm 10 - Thiết kế và Xây dựng Phần mềm
- * Thành viên: Đinh Thị Thu Huyền, Nguyễn Thị Ngọc Huyền, Lê Quốc Khánh
- * Giảng viên hướng dẫn: Nguyễn Thị Thu Trang
- * Bản quyền thuộc về Nhóm 10
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lendbooks.boundary;
 
@@ -11,12 +9,12 @@ package lendbooks.boundary;
  *
  * @author khanh
  */
-public class ViewListCardForm extends javax.swing.JFrame {
+public class ViewListRegisterCardForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewListCardForm
+     * Creates new form ViewListRegisterCardForm
      */
-    public ViewListCardForm() {
+    public ViewListRegisterCardForm() {
         initComponents();
     }
 
@@ -35,11 +33,11 @@ public class ViewListCardForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 746, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addGap(0, 359, Short.MAX_VALUE)
         );
 
         pack();
@@ -62,20 +60,20 @@ public class ViewListCardForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewListCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewListRegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewListCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewListRegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewListCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewListRegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewListCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewListRegisterCardForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewListCardForm().setVisible(true);
+                new ViewListRegisterCardForm().setVisible(true);
             }
         });
     }

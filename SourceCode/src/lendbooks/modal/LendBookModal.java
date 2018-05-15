@@ -5,7 +5,8 @@
  * Giảng viên hướng dẫn: Nguyễn Thị Thu Trang
  * Bản quyền thuộc về Nhóm 10
  */
-package entity;
+package lendbooks.modal;
+import entity.DataAccessHelper;
 import static entity.DataAccessHelper.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

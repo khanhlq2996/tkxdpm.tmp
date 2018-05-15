@@ -5,7 +5,9 @@
  * Giảng viên hướng dẫn: Nguyễn Thị Thu Trang
  * Bản quyền thuộc về Nhóm 10
  */
-package entity;
+package books.modal;
+
+import entity.DataAccessHelper;
 
 /**
  *

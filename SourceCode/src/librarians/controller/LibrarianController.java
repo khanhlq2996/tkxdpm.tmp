@@ -8,7 +8,7 @@
 package librarians.controller;
 
 // Import Modal to Controller
-import entity.LibrarianModal;
+import librarians.modal.LibrarianModal;
 
 /**
  *
