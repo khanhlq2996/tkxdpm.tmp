@@ -7,9 +7,13 @@
  */
 package books.boundary;
 
+import books.controller.BookController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
- * @author khanh
+ * @author khanh,DinhHuyen
  */
 public class CreateBookForm extends javax.swing.JFrame {
 
@@ -18,6 +22,19 @@ public class CreateBookForm extends javax.swing.JFrame {
      */
     public CreateBookForm() {
         initComponents();
+        new BookController().dulieuBangSach(jTableSach);
+        xoaDuLieuText();
+    }
+    
+    public void xoaDuLieuText(){
+       BookController book = new BookController();
+        tfid_sach.setText(book.idauto(1));
+        tftenSach.setText("");
+        tftacGia.setText("");
+        tfnxb.setText("");
+//        tfgia.setText("");
+        tfngayNhap.setText(book.ngayHienTai());
+    
     }
 
     /**
@@ -31,20 +48,27 @@ public class CreateBookForm extends javax.swing.JFrame {
 
         lb_create_book = new javax.swing.JLabel();
         la_book_name = new javax.swing.JLabel();
-        tf_book_name = new javax.swing.JTextField();
+        tftenSach = new javax.swing.JTextField();
         lb_publishing_name = new javax.swing.JLabel();
-        tf_publishing_name = new javax.swing.JTextField();
+        tfnxb = new javax.swing.JTextField();
         lb_book_category = new javax.swing.JLabel();
         lb_author_name = new javax.swing.JLabel();
-        tf_author_name = new javax.swing.JTextField();
-        cb_book_category = new javax.swing.JComboBox<>();
-        tf_book_created = new javax.swing.JTextField();
+        tftacGia = new javax.swing.JTextField();
+        cbbtheLoai = new javax.swing.JComboBox<>();
+        tfngayNhap = new javax.swing.JTextField();
         lb_book_created = new javax.swing.JLabel();
-        lb_librarian_name = new javax.swing.JLabel();
         la_book_cost = new javax.swing.JLabel();
-        tf_book_cost = new javax.swing.JTextField();
-        cb_librarian_name = new javax.swing.JComboBox<>();
+        tfgia = new javax.swing.JTextField();
         bt_add_book = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableSach = new javax.swing.JTable();
+        lbmaSach = new javax.swing.JLabel();
+        tfid_sach = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        tfid_bansao = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        tfnamXB = new javax.swing.JTextField();
         mb_mainmenu = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -55,90 +79,82 @@ public class CreateBookForm extends javax.swing.JFrame {
         lb_create_book.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_create_book.setText("THÊM SÁCH");
 
-        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
-        tf_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tf_book_name.setText("Tên sách");
-        tf_book_name.addActionListener(new java.awt.event.ActionListener() {
+        tftenSach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_book_nameActionPerformed(evt);
+                tftenSachActionPerformed(evt);
             }
         });
 
-        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
-        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tf_publishing_name.setText("Tên NXB");
-        tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
+        tfnxb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_publishing_nameActionPerformed(evt);
+                tfnxbActionPerformed(evt);
             }
         });
 
-        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
-        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
-        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tf_author_name.setText("Tên Tác giả");
-        tf_author_name.addActionListener(new java.awt.event.ActionListener() {
+        tftacGia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_author_nameActionPerformed(evt);
+                tftacGiaActionPerformed(evt);
             }
         });
 
-        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
-        cb_book_category.addActionListener(new java.awt.event.ActionListener() {
+        cbbtheLoai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toán học", "Văn học", "CNTT", "Tự nhiên - Xã hội", "Tiếng anh" }));
+        cbbtheLoai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_book_categoryActionPerformed(evt);
+                cbbtheLoaiActionPerformed(evt);
             }
         });
 
-        tf_book_created.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tf_book_created.setText("Ngày thêm");
-        tf_book_created.addActionListener(new java.awt.event.ActionListener() {
+        tfngayNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_book_createdActionPerformed(evt);
+                tfngayNhapActionPerformed(evt);
             }
         });
 
-        lb_book_created.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_created.setText("Ngày thêm");
 
-        lb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        lb_librarian_name.setText("Thủ thư thêm sách");
-
-        la_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_cost.setText("Giá");
 
-        tf_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        tf_book_cost.setText("Giá");
-        tf_book_cost.addActionListener(new java.awt.event.ActionListener() {
+        tfgia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_book_costActionPerformed(evt);
+                tfgiaActionPerformed(evt);
             }
         });
 
-        cb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        cb_librarian_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
-        cb_librarian_name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_librarian_nameActionPerformed(evt);
-            }
-        });
-
-        bt_add_book.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bt_add_book.setText("Thêm sách");
         bt_add_book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_add_bookActionPerformed(evt);
             }
         });
+
+        jTableSach.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableSach);
+
+        lbmaSach.setText("Mã Sách");
+
+        jLabel1.setText("Mã bản sao:");
+
+        jLabel2.setText("Ngày nhập: ");
+
+        jLabel3.setText("Năm xuất bản: ");
 
         jMenu1.setText("Tìm kiếm sách");
         mb_mainmenu.add(jMenu1);
@@ -156,110 +172,156 @@ public class CreateBookForm extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(la_book_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_publishing_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_author_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_book_category, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tf_book_name)
-                            .addComponent(tf_author_name, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                            .addComponent(tf_publishing_name)
-                            .addComponent(cb_book_category, 0, 1, Short.MAX_VALUE))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(la_book_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lb_book_created, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lb_librarian_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
+                                    .addComponent(la_book_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lb_publishing_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lb_book_category, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                                    .addComponent(lb_author_name, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tf_book_created, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cb_librarian_name, 0, 183, Short.MAX_VALUE)
-                                    .addComponent(tf_book_cost)))
-                            .addComponent(bt_add_book, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(25, 25, 25))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbbtheLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tftacGia, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tftenSach, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfid_sach, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfnxb, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(8, 8, 8))))
+                            .addComponent(lbmaSach))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(la_book_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(tfgia, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lb_book_created))
+                                            .addComponent(tfid_bansao, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(tfnamXB))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(tfngayNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lb_create_book, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(34, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(lb_create_book)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(la_book_name)
-                    .addComponent(tf_book_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_book_cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(la_book_cost))
-                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lb_author_name)
-                            .addComponent(tf_author_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lb_publishing_name)
-                            .addComponent(tf_publishing_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lb_book_category)
-                            .addComponent(cb_book_category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lb_librarian_name)
-                            .addComponent(cb_librarian_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfid_sach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(tfnamXB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lb_book_created)
-                            .addComponent(tf_book_created, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bt_add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(tftenSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(la_book_name)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfngayNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(bt_add_book, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tftacGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel1)
+                                        .addComponent(tfid_bansao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(lb_author_name, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lb_publishing_name)
+                                    .addComponent(tfnxb, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lb_book_category)
+                                    .addComponent(cbbtheLoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(39, 39, 39))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lbmaSach)
+                        .addGap(102, 102, 102)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lb_book_created, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(la_book_cost)
+                            .addComponent(tfgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_book_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_book_nameActionPerformed
+    private void tftenSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tftenSachActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_book_nameActionPerformed
+    }//GEN-LAST:event_tftenSachActionPerformed
 
-    private void tf_publishing_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_publishing_nameActionPerformed
+    private void tfnxbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfnxbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_publishing_nameActionPerformed
+    }//GEN-LAST:event_tfnxbActionPerformed
 
-    private void tf_author_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_author_nameActionPerformed
+    private void tftacGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tftacGiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_author_nameActionPerformed
+    }//GEN-LAST:event_tftacGiaActionPerformed
 
-    private void cb_book_categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_book_categoryActionPerformed
+    private void cbbtheLoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbtheLoaiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cb_book_categoryActionPerformed
+    }//GEN-LAST:event_cbbtheLoaiActionPerformed
 
-    private void tf_book_createdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_book_createdActionPerformed
+    private void tfngayNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfngayNhapActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_book_createdActionPerformed
+    }//GEN-LAST:event_tfngayNhapActionPerformed
 
-    private void tf_book_costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_book_costActionPerformed
+    private void tfgiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfgiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_book_costActionPerformed
-
-    private void cb_librarian_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_librarian_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_librarian_nameActionPerformed
+    }//GEN-LAST:event_tfgiaActionPerformed
 
     private void bt_add_bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_add_bookActionPerformed
-        // TODO add your handling code here:
+        BookController sach = new BookController();
+        try {
+            sach.addBook(tfid_sach.getText(), tftenSach.getText(), cbbtheLoai.getSelectedItem().toString(), tfnxb.getText(), tftacGia.getText(), tfngayNhap.getText(), Integer.getInteger(tfnamXB.getText()));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CreateBookForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        sach.dulieuBangSach(jTableSach);
+
     }//GEN-LAST:event_bt_add_bookActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argument
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -295,23 +357,30 @@ public class CreateBookForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_add_book;
-    private javax.swing.JComboBox<String> cb_book_category;
-    private javax.swing.JComboBox<String> cb_librarian_name;
+    private javax.swing.JComboBox<String> cbbtheLoai;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableSach;
     private javax.swing.JLabel la_book_cost;
     private javax.swing.JLabel la_book_name;
     private javax.swing.JLabel lb_author_name;
     private javax.swing.JLabel lb_book_category;
     private javax.swing.JLabel lb_book_created;
     private javax.swing.JLabel lb_create_book;
-    private javax.swing.JLabel lb_librarian_name;
     private javax.swing.JLabel lb_publishing_name;
+    private javax.swing.JLabel lbmaSach;
     private javax.swing.JMenuBar mb_mainmenu;
-    private javax.swing.JTextField tf_author_name;
-    private javax.swing.JTextField tf_book_cost;
-    private javax.swing.JTextField tf_book_created;
-    private javax.swing.JTextField tf_book_name;
-    private javax.swing.JTextField tf_publishing_name;
+    private javax.swing.JTextField tfgia;
+    private javax.swing.JTextField tfid_bansao;
+    private javax.swing.JTextField tfid_sach;
+    private javax.swing.JTextField tfnamXB;
+    private javax.swing.JTextField tfngayNhap;
+    private javax.swing.JTextField tfnxb;
+    private javax.swing.JTextField tftacGia;
+    private javax.swing.JTextField tftenSach;
     // End of variables declaration//GEN-END:variables
 }

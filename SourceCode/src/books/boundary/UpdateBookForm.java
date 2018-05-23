@@ -53,11 +53,10 @@ public class UpdateBookForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lb_update_book.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lb_update_book.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lb_update_book.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_update_book.setText("CẬP NHẬT THÔNG TIN SÁCH");
 
-        tf_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_name.setText("Tên sách");
         tf_book_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,13 +64,10 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        la_book_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_name.setText("Tên Sách");
 
-        lb_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_author_name.setText("Tên Tác giả");
 
-        tf_author_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_author_name.setText("Tên Tác giả");
         tf_author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +75,6 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        tf_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name.setText("Tên NXB");
         tf_publishing_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,13 +82,10 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        lb_publishing_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name.setText("Tên NXB");
 
-        lb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category.setText("Thể loại sách");
 
-        cb_book_category.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_book_category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_book_category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +93,6 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        tf_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_book_cost.setText("Giá");
         tf_book_cost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,21 +100,17 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        la_book_cost.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         la_book_cost.setText("Giá");
 
-        bt_update_book.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        bt_update_book.setText("Cập nhật sách");
+        bt_update_book.setText("Thêm sách");
         bt_update_book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_update_bookActionPerformed(evt);
             }
         });
 
-        lb_book_category1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_book_category1.setText("Ngày cập nhật");
 
-        tf_publishing_name2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name2.setText("Ngày thêm");
         tf_publishing_name2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +118,6 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        tf_publishing_name1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tf_publishing_name1.setText("Ngày thêm");
         tf_publishing_name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,21 +125,16 @@ public class UpdateBookForm extends javax.swing.JFrame {
             }
         });
 
-        lb_publishing_name1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_publishing_name1.setText("Ngày thêm");
 
-        lb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         lb_librarian_name.setText("Thủ thư thêm sách");
 
-        cb_librarian_name.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         cb_librarian_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thể loại sách" }));
         cb_librarian_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_librarian_nameActionPerformed(evt);
             }
         });
-
-        mb_mainmenu.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jMenu1.setText("Tìm kiếm sách");
         mb_mainmenu.add(jMenu1);
@@ -179,18 +160,20 @@ public class UpdateBookForm extends javax.swing.JFrame {
                             .addComponent(la_book_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cb_book_category, 0, 148, Short.MAX_VALUE)
-                                .addComponent(tf_publishing_name, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tf_author_name, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tf_book_name))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cb_book_category, 0, 1, Short.MAX_VALUE)
+                                    .addComponent(tf_publishing_name, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_author_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                    .addComponent(tf_book_name, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addComponent(tf_book_cost))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lb_publishing_name1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lb_librarian_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lb_book_category1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(20, 20, 20)
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tf_publishing_name1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tf_publishing_name2, javax.swing.GroupLayout.Alignment.TRAILING)

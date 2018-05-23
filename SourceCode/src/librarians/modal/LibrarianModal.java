@@ -7,7 +7,7 @@
  */
 package librarians.modal;
 
-import entity.DataAccessHelper;
+import entity.modal.DataAccessHelper;
 
 /**
  *

@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/lendbooks/modal/DangKyMuon.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/lendbooks/boundary/RegisterCardForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/boundary/ViewProfile.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/boundary/UpdateProfileForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/home/StartForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/modal/ReaderModal.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/boundary/ReaderHelper.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/controller/ReaderController.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/books/modal/CopiesModal.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/books/boundary/CreateBookForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/books/boundary/CopyBookForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/readers/boundary/RegisterForm.java</file>
+            <file>file:/Users/khanh/tkxdpm.tmp/SourceCode/src/books/modal/BookModal.java</file>
+        </group>
     </open-files>
 </project-private>

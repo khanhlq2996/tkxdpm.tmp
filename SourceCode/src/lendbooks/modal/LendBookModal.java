@@ -6,8 +6,8 @@
  * Bản quyền thuộc về Nhóm 10
  */
 package lendbooks.modal;
-import entity.DataAccessHelper;
-import static entity.DataAccessHelper.conn;
+import entity.modal.DataAccessHelper;
+import static entity.modal.DataAccessHelper.conn;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
