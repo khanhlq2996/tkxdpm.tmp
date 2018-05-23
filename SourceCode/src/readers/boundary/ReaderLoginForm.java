@@ -140,7 +140,10 @@ public class ReaderLoginForm extends javax.swing.JFrame {
 
             // Gọi đối tượng kiểm tra các giá trị thông thường
             ReaderHelper readerHelper = new ReaderHelper();
-
+            if (tfEmail.getText().equals("") || pwfMatKhau.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Chưa điền hết các trường yêu cầu!");
+                return;
+            }
             // Thực thi thêm bản ghi mới
             int log = reader.checkLog(
                     tfEmail.getText(),
@@ -150,19 +153,20 @@ public class ReaderLoginForm extends javax.swing.JFrame {
             switch (log) {
                 case 0:
                     JOptionPane.showMessageDialog(null, "Tài khoản của bạn chưa được kích hoạt, vui lòng liên hệ QTV!");
-                    return;
+                    break;
                 case 1:
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
                     HomeReaderForm home = new HomeReaderForm();
+                    home.setEmail(tfEmail.getText());
                     home.setVisible(true);
                     this.dispose();
-                    return;
+                    break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Sai mật khẩu!");
-                    return;
+                    break;
                 case 3:
                     JOptionPane.showMessageDialog(null, "Email không tôn tại!");
-                    return;
+                    break;
             }
 
         } catch (SQLException ex) {

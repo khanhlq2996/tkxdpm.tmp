@@ -8,6 +8,12 @@
 package readers.boundary;
 
 import home.HomeReaderForm;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import readers.controller.ReaderController;
+import readers.modal.ReaderModal;
 
 /**
  *
@@ -32,17 +38,17 @@ public class ChangePasswordForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnChangePass = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnTrangChuForm = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
         btnMuonTraSach = new javax.swing.JButton();
         btnSach = new javax.swing.JButton();
+        pwOldPass = new javax.swing.JPasswordField();
+        pwNewPass = new javax.swing.JPasswordField();
+        pwConfirmPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,15 +56,14 @@ public class ChangePasswordForm extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THAY ĐỔI MẬT KHẨU");
 
-        jTextField3.setText("jTextField1");
-
-        jTextField4.setText("jTextField1");
-
-        jTextField5.setText("jTextField1");
-
         jLabel6.setText("Nhập lại Mật khẩu mới");
 
-        jButton1.setText("Cập nhật mật khẩu");
+        btnChangePass.setText("Cập nhật mật khẩu");
+        btnChangePass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangePassActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Mật khẩu mới");
 
@@ -111,10 +116,10 @@ public class ChangePasswordForm extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField3))))
+                            .addComponent(btnChangePass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pwOldPass)
+                            .addComponent(pwNewPass)
+                            .addComponent(pwConfirmPass))))
                 .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
@@ -129,18 +134,18 @@ public class ChangePasswordForm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(pwOldPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwNewPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnChangePass, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -156,7 +161,14 @@ public class ChangePasswordForm extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        ViewProfile ViewProfile = new ViewProfile();
+        ViewProfile ViewProfile = null;
+        try {
+            ViewProfile = new ViewProfile();
+        } catch (SQLException ex) {
+            Logger.getLogger(ChangePasswordForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ChangePasswordForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ViewProfile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProfileActionPerformed
@@ -164,6 +176,44 @@ public class ChangePasswordForm extends javax.swing.JFrame {
     private void btnMuonTraSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMuonTraSachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMuonTraSachActionPerformed
+
+    private void btnChangePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePassActionPerformed
+        // TODO add your handling code here:        
+        ReaderHelper hp = new ReaderHelper();
+        ReaderController readerController = ReaderController.getInstance();
+        try {
+            ReaderModal reader = readerController.findByEmail(HomeReaderForm.getEmail());
+
+            boolean checkPass = hp.checkConfirmPass(hp.MD5encrypt(pwOldPass.getText()), reader.getPassword());
+            boolean checkConfirmPass = hp.checkConfirmPass(pwNewPass.getText(), pwConfirmPass.getText());
+
+            if (pwOldPass.getText().equals("") || pwNewPass.getText().equals("") || pwConfirmPass.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Chưa điền hết các trường yêu cầu!");
+                return;
+            }
+
+            if (checkPass == false) {
+                JOptionPane.showMessageDialog(null, "Mật khẩu cũ không đúng!");
+                return;
+            }
+            if (checkPass && checkConfirmPass == false) {
+                JOptionPane.showMessageDialog(null, "Mật khẩu mới không trùng nhau!");
+                return;
+            }
+            if (checkPass == true && checkConfirmPass == true) {
+                readerController.changePassword(HomeReaderForm.getEmail(), hp.MD5encrypt(pwNewPass.getText().toString()));
+                ViewProfile viewProfile = new ViewProfile();
+                JOptionPane.showMessageDialog(null, "Mật khẩu đã được thay đổi!");
+                viewProfile.setVisible(true);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ChangePasswordForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ChangePasswordForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
+
+    }//GEN-LAST:event_btnChangePassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,17 +251,17 @@ public class ChangePasswordForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChangePass;
     private javax.swing.JButton btnMuonTraSach;
     private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnSach;
     private javax.swing.JButton btnTrangChuForm;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JPasswordField pwConfirmPass;
+    private javax.swing.JPasswordField pwNewPass;
+    private javax.swing.JPasswordField pwOldPass;
     // End of variables declaration//GEN-END:variables
 }

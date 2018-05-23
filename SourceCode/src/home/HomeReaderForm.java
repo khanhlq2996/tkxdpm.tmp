@@ -5,6 +5,9 @@
  */
 package home;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import readers.boundary.ViewProfile;
 
 /**
@@ -20,6 +23,16 @@ public class HomeReaderForm extends javax.swing.JFrame {
         initComponents();
     }
 
+    private static String email;
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public static void setEmail(String email) {
+        HomeReaderForm.email = email;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,7 +131,14 @@ public class HomeReaderForm extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        ViewProfile ViewProfile = new ViewProfile();
+        ViewProfile ViewProfile = null;
+        try {
+            ViewProfile = new ViewProfile();
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeReaderForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HomeReaderForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ViewProfile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProfileActionPerformed

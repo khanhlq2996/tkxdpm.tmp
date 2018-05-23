@@ -17,6 +17,10 @@ import java.sql.*;
  */
 public class DataAccessHelper {
 
+    public static Connection getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private final String GET_COUNT = "select count(*) from ";
     private static String dbPath = "jdbc:mysql://localhost:3306/qltv_tkxdpm_20172?" +
                                    "user=root&password=root";

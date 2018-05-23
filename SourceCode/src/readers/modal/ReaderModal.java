@@ -23,9 +23,9 @@ public class ReaderModal extends DataAccessHelper{
     private final String GET_LOGIN = "SELECT * FROM docgia WHERE email=? AND password=?";
     private final String SEARCH_USER_BY_EMAIL = "SELECT * FROM docgia WHERE email = ?";
     private final String ADD_USER = "INSERT INTO docgia (email,password,hoten,mssv,sdt,gioitinh,trangthai) VALUES (?,?,?,?,?,?,?)";
-//    private final String SEARCH_USER = "select firstName,lastName,User.email,roleName,birthday,phoneNumber from User,Role,UserRole where User.email = UserRole.email and Role.roleId = UserRole.roleId";
-    private final String UPDATE_PASS = "UPDATE docgia set password = ?,requestToChange=? where email = ?";
-    private final String UPDATE_PROFILE ="UPDATE docgia set password = ?,email=?,gender=?,firstName=?,lastName=?,phoneNumber=?,birthday=?,requestToChange=?, status=? where email = ?";
+    //    private final String SEARCH_USER = "select firstName,lastName,User.email,roleName,birthday,phoneNumber from User,Role,UserRole where User.email = UserRole.email and Role.roleId = UserRole.roleId";
+    private final String UPDATE_PASS = "UPDATE docgia SET password = ? where email = ?";
+    private final String UPDATE_PROFILE ="UPDATE docgia SET email=?,hoten=?,mssv=?,sdt=?,gioitinh=? WHERE email = ?";
     
     private String email;
     private String password;
@@ -91,6 +91,34 @@ public class ReaderModal extends DataAccessHelper{
         this.trangthai = trangthai;
     }
 
+     /**
+     *Hàm này kiểm tra xem email và pass word có khớp với csdl không
+     * và kiểm tra các trạng thài khóa hoặc yêu cầu thay đổi pass của người dùng.
+     * @param email là email người dùng
+     * @param password là mật khẩu người dùng
+     * @return int return là : 0. tài khoản bị khóa, 1 yêu cầu thay đổi pass
+     * 2 là đúng, 3 là sai mật khẩu, 4 là email không tồn tại.
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @see ClassNotFoundException
+     * @see SQLException
+     */ 
+    public boolean changePassword(String emai, String password) throws SQLException, ClassNotFoundException {
+        connectDB();
+        try {
+            connectDB();            
+            PreparedStatement ps = conn.prepareStatement(UPDATE_PASS);
+            ps.setString(1, password);
+            ps.setString(2, emai);
+            ps.executeUpdate();
+            closeDB();
+            return true;
+        } catch (SQLException | ClassNotFoundException ex) {   
+            Logger.getLogger(ReaderModal.class.getName()).log(Level.SEVERE, null, ex);
+            return false;    
+        }
+    }
+    
     
     /**
      *Hàm này kiểm tra xem email và pass word có khớp với csdl không
@@ -200,25 +228,23 @@ public class ReaderModal extends DataAccessHelper{
      * @throws SQLException
      * @see ClassNotFoundException
      * @see SQLException
-     */ 
-    public void updateProfile(String oldEmail) throws SQLException, ClassNotFoundException{
-        connectDB();
-        PreparedStatement ps = conn.prepareStatement(UPDATE_PROFILE);
-        ps.setString(1, password);
-        ps.setString(2, email);
-//        ps.setString(3, gender);
-//        ps.setString(4, firstName);
-//        ps.setString(5, lastName);
-//        ps.setString(6, phoneNumber);
-//        ps.setString(7, birthDay);
-//        ps.setInt(9, status);
-        ps.setString(10, oldEmail);
-        ps.executeUpdate();
-        closeDB();
-    }
-    
-    public static void main(String[] args)  throws SQLException, ClassNotFoundException{
-        ReaderModal re = new ReaderModal();
-        re.addUser();
+     */
+    public boolean updateProfile(String oldEmail) throws SQLException, ClassNotFoundException{
+        try {
+            connectDB();
+            PreparedStatement ps = conn.prepareStatement(UPDATE_PROFILE);
+            ps.setString(1, email);
+            ps.setString(2, hoten);
+            ps.setString(3, mssv);
+            ps.setString(4, sdt);
+            ps.setInt(5, gioitinh);
+            ps.setString(6, oldEmail);
+            ps.executeUpdate();
+            closeDB();
+            return true;
+        } catch (SQLException | ClassNotFoundException ex) {   
+            Logger.getLogger(ReaderModal.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 }

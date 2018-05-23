@@ -47,8 +47,8 @@
                           <Component id="tfEmail" max="32767" attributes="0"/>
                           <Component id="tfHoten" max="32767" attributes="0"/>
                           <Component id="tfMSSV" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfGioiTinh" alignment="0" max="32767" attributes="0"/>
                           <Component id="tfSdt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfGioiTinh" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -75,7 +75,7 @@
                   <Component id="btnMuonTraSach" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSach" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" pref="33" max="32767" attributes="0"/>
+              <EmptySpace type="separate" pref="34" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -102,7 +102,7 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="tfGioiTinh" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnUpdate" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnChangePass" alignment="0" pref="50" max="32767" attributes="0"/>
@@ -186,14 +186,6 @@
         <Property name="text" type="java.lang.String" value="jTextField3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfGioiTinh">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfGioiTinhActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnTrangChuForm">
       <Properties>
         <Property name="text" type="java.lang.String" value="Trang ch&#x1ee7;"/>
@@ -222,6 +214,20 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Tra c&#x1ee9;u s&#xe1;ch"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="tfGioiTinh">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Nam"/>
+            <StringItem index="1" value="N&#x1eef;"/>
+            <StringItem index="2" value="Gi&#x1edb;i t&#xed;nh kh&#xe1;c"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

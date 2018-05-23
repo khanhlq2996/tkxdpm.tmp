@@ -8,7 +8,11 @@
 package readers.boundary;
 
 import home.HomeReaderForm;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import readers.controller.ReaderController;
+import readers.modal.ReaderModal;
 
 /**
  *
@@ -19,11 +23,9 @@ public class ViewProfile extends javax.swing.JFrame {
     /**
      * Creates new form ViewProfile
      */
-    public ViewProfile() {
-        ReaderController reader = new ReaderController();
-        
-        
+    public ViewProfile() throws SQLException, ClassNotFoundException {
         initComponents();
+        genInfomation();
     }
 
     /**
@@ -200,11 +202,30 @@ public class ViewProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void genInfomation() throws SQLException, ClassNotFoundException{
+        tfEmail.setText(HomeReaderForm.getEmail());
+        ReaderController readerController = ReaderController.getInstance();
+        
+        ReaderModal reader = readerController.findByEmail(HomeReaderForm.getEmail());
+        tfHoTen.setText(reader.getHoten());
+        tfMSSV.setText(reader.getMssv());
+        tfsdt.setText(reader.getSdt());
+        ReaderHelper hp = new ReaderHelper();
+        String gioiTinh = hp.getGioiTinh(reader.getGioitinh());
+        tfGioiTinh.setText(gioiTinh);
+    }
+    
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
-        UpdateProfileForm udProfile = new UpdateProfileForm();
-        udProfile.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            UpdateProfileForm udProfile = new UpdateProfileForm();
+            udProfile.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnChangePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePassActionPerformed
@@ -223,7 +244,14 @@ public class ViewProfile extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:        
-        ViewProfile ViewProfile = new ViewProfile();
+        ViewProfile ViewProfile = null;
+        try {
+            ViewProfile = new ViewProfile();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ViewProfile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProfileActionPerformed
@@ -262,7 +290,13 @@ public class ViewProfile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewProfile().setVisible(true);
+                try {
+                    new ViewProfile().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ViewProfile.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

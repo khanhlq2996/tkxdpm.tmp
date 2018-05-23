@@ -8,6 +8,11 @@
 package readers.boundary;
 
 import home.HomeReaderForm;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import readers.controller.ReaderController;
+import readers.modal.ReaderModal;
 
 /**
  *
@@ -18,8 +23,9 @@ public class UpdateProfileForm extends javax.swing.JFrame {
     /**
      * Creates new form UpdateProfileForm
      */
-    public UpdateProfileForm() {
+    public UpdateProfileForm() throws SQLException, ClassNotFoundException {
         initComponents();
+        setOldProfile();
     }
 
     /**
@@ -43,11 +49,11 @@ public class UpdateProfileForm extends javax.swing.JFrame {
         tfHoten = new javax.swing.JTextField();
         tfMSSV = new javax.swing.JTextField();
         tfSdt = new javax.swing.JTextField();
-        tfGioiTinh = new javax.swing.JTextField();
         btnTrangChuForm = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
         btnMuonTraSach = new javax.swing.JButton();
         btnSach = new javax.swing.JButton();
+        tfGioiTinh = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,13 +94,6 @@ public class UpdateProfileForm extends javax.swing.JFrame {
 
         tfSdt.setText("jTextField3");
 
-        tfGioiTinh.setText("jTextField3");
-        tfGioiTinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfGioiTinhActionPerformed(evt);
-            }
-        });
-
         btnTrangChuForm.setText("Trang chủ");
         btnTrangChuForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +116,8 @@ public class UpdateProfileForm extends javax.swing.JFrame {
         });
 
         btnSach.setText("Tra cứu sách");
+
+        tfGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Giới tính khác" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,8 +144,8 @@ public class UpdateProfileForm extends javax.swing.JFrame {
                             .addComponent(tfEmail)
                             .addComponent(tfHoten)
                             .addComponent(tfMSSV)
-                            .addComponent(tfGioiTinh)
-                            .addComponent(tfSdt))))
+                            .addComponent(tfSdt)
+                            .addComponent(tfGioiTinh, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(107, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnTrangChuForm)
@@ -164,7 +165,7 @@ public class UpdateProfileForm extends javax.swing.JFrame {
                     .addComponent(btnProfile)
                     .addComponent(btnMuonTraSach)
                     .addComponent(btnSach))
-                .addGap(18, 33, Short.MAX_VALUE)
+                .addGap(18, 34, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -186,7 +187,7 @@ public class UpdateProfileForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(tfGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnChangePass, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
@@ -196,16 +197,35 @@ public class UpdateProfileForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setOldProfile() throws SQLException, ClassNotFoundException {
+        tfEmail.setText(HomeReaderForm.getEmail());
+        ReaderController readerController = ReaderController.getInstance();
+        
+        ReaderModal reader = readerController.findByEmail(HomeReaderForm.getEmail());
+        tfHoten.setText(reader.getHoten());
+        tfMSSV.setText(reader.getMssv());
+        tfSdt.setText(reader.getSdt());
+        ReaderHelper hp = new ReaderHelper();
+        String gioiTinh = hp.getGioiTinh(reader.getGioitinh());
+        
+        tfGioiTinh.setSelectedItem(gioiTinh);
+    }
+    
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        ViewProfile profile = new ViewProfile();
+        ViewProfile profile = null;
+        try {
+            ReaderController readerController = ReaderController.getInstance();
+            readerController.updateProfile(tfEmail.getText(), tfHoten.getText(), tfMSSV.getText(), tfSdt.getText(), tfGioiTinh.getSelectedIndex());
+            profile = new ViewProfile();
+        } catch (SQLException ex) {
+            Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         profile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void tfGioiTinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGioiTinhActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfGioiTinhActionPerformed
 
     private void btnChangePassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePassActionPerformed
         // TODO add your handling code here:
@@ -223,7 +243,14 @@ public class UpdateProfileForm extends javax.swing.JFrame {
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        ViewProfile ViewProfile = new ViewProfile();
+        ViewProfile ViewProfile = null;
+        try {
+            ViewProfile = new ViewProfile();
+        } catch (SQLException ex) {
+            Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ViewProfile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnProfileActionPerformed
@@ -262,7 +289,13 @@ public class UpdateProfileForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateProfileForm().setVisible(true);
+                try {
+                    new UpdateProfileForm().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(UpdateProfileForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -281,7 +314,7 @@ public class UpdateProfileForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lbHoTen;
     private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfGioiTinh;
+    private javax.swing.JComboBox<String> tfGioiTinh;
     private javax.swing.JTextField tfHoten;
     private javax.swing.JTextField tfMSSV;
     private javax.swing.JTextField tfSdt;
