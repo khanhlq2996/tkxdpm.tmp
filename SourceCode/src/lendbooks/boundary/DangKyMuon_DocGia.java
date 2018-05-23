@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package lendbooks.boundary;
 
-import Controller.DangKyMuonConTroller;
+import lendbooks.controller.LendBookController;
 import javax.swing.JComboBox;
-import Controller.DataAccess;
-import Model.Book;
-import Model.DangKyMuon;
+import entity.modal.DataAccessHelper;
+import books.controller.BookController;
+import lendbooks.modal.DangKyMuon;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -121,13 +121,13 @@ public class DangKyMuon_DocGia extends javax.swing.JFrame {
 
         boxCopyBook.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         boxCopyBook.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-                boxCopyBookPopupMenuCanceled(evt);
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
                 boxCopyBookPopupMenuWillBecomeInvisible(evt);
             }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+                boxCopyBookPopupMenuCanceled(evt);
             }
         });
         boxCopyBook.addActionListener(new java.awt.event.ActionListener() {

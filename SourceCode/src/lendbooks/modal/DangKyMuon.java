@@ -27,7 +27,7 @@ import javax.swing.table.TableModel;
  * @author Nguyen Phuong
  */
 public class DangKyMuon {
-    Connection con = DataAccess.getConnection();  
+    Connection con = DataAccessHelper.getConnection();  
     
     
     String MaSachGoc,TenSach,TenTacGia,TenNXB,TenTheLoai,NgayDangKy ,NgayDenLay ;
@@ -191,10 +191,4 @@ public class DangKyMuon {
 		
          
      }
-   
-   
-    
-    
-    
-
 }
